@@ -1,0 +1,74 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Crashes by SA4 Region and Age Group",
+  "data": {
+    "url": "data//SA4 name.csv",
+    "format": {"type": "csv"}
+  },
+  "params": [
+    {
+      "name": "selectedState",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": [
+          "All",
+          "New South Wales",
+          "Victoria",
+          "Queensland",
+          "South Australia",
+          "Western Australia",
+          "Tasmania",
+          "Northern Territory",
+          "Australian Capital Territory"
+        ],
+        "name": "Select State: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "(selectedState == 'All' || datum.STATE_NAME == selectedState)"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "SA4 Name",
+      "type": "nominal",
+      "title": "SA4 Region",
+      "sort": "-y"
+    },
+    "y": {
+      "field": "Crash Count",
+      "type": "quantitative",
+      "title": "Crash Count"
+    },
+    "color": {
+      "field": "STATE_NAME",  
+      "type": "nominal",
+      "legend": {"title": "State"},
+      "scale": {
+        "scheme": "category20",  
+        "domain": [
+          "New South Wales",
+          "Victoria",
+          "Queensland",
+          "South Australia",
+          "Western Australia",
+          "Tasmania",
+          "Northern Territory",
+          "Australian Capital Territory"
+        ],
+        "range": [
+          "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b",
+          "#e377c2", "#7f7f7f"
+        ]  
+      }
+    },
+    "tooltip": [
+      {"field": "SA4 Name", "type": "nominal", "title": "SA4 Region"},
+      {"field": "Crash Count", "type": "quantitative", "title": "Crash Count"}
+    ]
+  }
+}
