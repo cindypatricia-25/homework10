@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Crashes by SA4 Region and Age Group",
+  "title": "Crashes by SA4 Region",
   "data": {
     "url": "data//SA4 name.csv",
     "format": {"type": "csv"}
