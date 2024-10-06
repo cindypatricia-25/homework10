@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Choropleth Map and SA4 Bar Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="map"></div>
+  
+  <div id="sa4"></div>
+
+  <script type="text/javascript">
+    // Choropleth Map
+    var vg_map = "statefilter.json";  
+    vegaEmbed("#map", vg_map).then(function(result) {
+      // Access the Vega view instance if needed
+    }).catch(console.error);
+
+    // SA4 Bar Chart
+    var vg_sa4 = "sa4.json"; 
+    vegaEmbed("#sa4", vg_sa4).then(function(result) {
+      // Access the Vega view instance if needed
+    }).catch(console.error);
+  </script>
+</body>
+</html>

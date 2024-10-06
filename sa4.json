@@ -67,8 +67,9 @@
       }
     },
     "tooltip": [
-      {"field": "SA4 Name", "type": "nominal", "title": "SA4 Region"},
-      {"field": "Crash Count", "type": "quantitative", "title": "Crash Count"}
+      {"field": "SA4 Name", "type": "nominal", "title": "SA4 name:"},
+      {"field": "Crash Count", "type": "quantitative", "title": "Crash Count: "},
+      {"field": "STATE_NAME", "type": "nominal", "title": "State:"}
     ]
   }
 }
